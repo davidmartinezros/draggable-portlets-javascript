@@ -1,0 +1,55 @@
+#mydiv1, #mydiv2, #mydiv3, #mydiv4, #mydiv5, #mydiv6, #mydiv7, #mydiv8 {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+}
+
+#mydiv1 {
+  top: 100px;
+  left: 100px;
+}
+
+#mydiv2 {
+  top: 100px;
+  left: 300px;
+}
+
+#mydiv3 {
+  top: 100px;
+  left: 500px;
+}
+
+#mydiv4 {
+  top: 100px;
+  left: 700px;
+}
+
+#mydiv5 {
+  top: 300px;
+  left: 100px;
+}
+
+#mydiv6 {
+  top: 300px;
+  left: 300px;
+}
+
+#mydiv7 {
+  top: 300px;
+  left: 500px;
+}
+
+#mydiv8 {
+  top: 300px;
+  left: 700px;
+}
+
+#mydiv1header, #mydiv2header, #mydiv3header, #mydiv4header, #mydiv5header, #mydiv6header, #mydiv7header, #mydiv8header {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
