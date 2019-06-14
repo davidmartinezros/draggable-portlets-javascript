@@ -1,68 +1,120 @@
-<html>
-  <head>
-      <link rel="stylesheet" href="styles.css">
-      <script src="dragAndDrop.js" async></script>
-  </head>
-  <body>
-    <div style="width:500px; height:500px">
-      <!-- Draggable DIV -->
-      <div id="mydiv1">
-        <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
-        <div id="mydiv1header">Click here to move</div>
-        <p>Move</p>
-        <p>this</p>
-        <p>DIV</p>
-      </div>
-      <div id="mydiv2">
-        <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
-        <div id="mydiv2header">Click here to move</div>
-        <p>Move</p>
-        <p>this</p>
-        <p>DIV</p>
-      </div>
-      <div id="mydiv3">
-        <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
-        <div id="mydiv3header">Click here to move</div>
-        <p>Move</p>
-        <p>this</p>
-        <p>DIV</p>
-      </div>
-      <div id="mydiv4">
-        <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
-        <div id="mydiv4header">Click here to move</div>
-        <p>Move</p>
-        <p>this</p>
-        <p>DIV</p>
-      </div>
-      <!-- Draggable DIV -->
-      <div id="mydiv5">
-        <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
-        <div id="mydiv5header">Click here to move</div>
-        <p>Move</p>
-        <p>this</p>
-        <p>DIV</p>
-      </div>
-      <div id="mydiv6">
-        <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
-        <div id="mydiv6header">Click here to move</div>
-        <p>Move</p>
-        <p>this</p>
-        <p>DIV</p>
-      </div>
-      <div id="mydiv7">
-        <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
-        <div id="mydiv7header">Click here to move</div>
-        <p>Move</p>
-        <p>this</p>
-        <p>DIV</p>
-      </div>
-      <div id="mydiv8">
-        <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
-        <div id="mydiv8header">Click here to move</div>
-        <p>Move</p>
-        <p>this</p>
-        <p>DIV</p>
-      </div>
-    </div>
-  </body>
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Portlets with Javascript | Angular, Java and Javascript website Projects</title>
+  <base href="https://davidmartinezros.com/Javascript/draggable-portlets-javascript/">
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="author" content="David Martinez Ros">
+  <meta name="keywords" content="3D, Cube, Javascript, Barcelona, Catalonia, Spain, Job, Engineer, Engineering, Technology, Angular, Ionic, Java, Unity, Engine, Node.js, Bootstrap, Spring, Programming, JavaScript, C Sharp, C#">
+  <meta name="description" content="3D Cube with Javascript | Author: David Martinez Ros; Location: Barcelona, Catalonia, Spain; Job: Engineer, Engineering; Technology: Angular, Ionic, Java, Unity; Engine: Node.js, Boostrap, Spring; Programming: JavaScript, C Sharp, C#.">
+  <meta name="robots" content="index, follow">
+  <meta name="google" content="nositelinkssearchbox">
+  <link rel="publisher" href="https://plus.google.com/+DavidMartinezRos" title="davidmartinezros.com on Google+"/>
+  <link rel="author" href="https://plus.google.com/108069145499631514979/about" title="David Martinez Ros on Google+"/>
+  <script type="text/javascript" src="../../assets/scripts/google_analytics.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+  body {
+    min-width: 320px;
+  }
+  .column {
+    width: 33%;
+    float: left;
+    padding-bottom: 100px;
+  }
+  .portlet {
+    margin: 0 1em 1em 0;
+    padding: 0.3em;
+  }
+  .portlet-header {
+    padding: 0.2em 0.3em;
+    margin-bottom: 0.5em;
+    position: relative;
+  }
+  .portlet-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -8px;
+  }
+  .portlet-content {
+    padding: 0.4em;
+  }
+  .portlet-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 50px;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="jquery.ui.touch-punch.min.js"></script>
+  <script>
+  $( function() {
+    $( ".column" ).sortable({
+      connectWith: ".column",
+      handle: ".portlet-header",
+      cancel: ".portlet-toggle",
+      placeholder: "portlet-placeholder ui-corner-all"
+    });
+ 
+    $( ".portlet" )
+      .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
+      .find( ".portlet-header" )
+        .addClass( "ui-widget-header ui-corner-all" )
+        .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
+        
+    $( ".portlet-toggle" ).on( "click", function() {
+      alert('You clicked');
+      var icon = $( this );
+      icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
+      icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
+    });
+  } );
+  </script>
+</head>
+<body>
+ 
+<div class="column">
+ 
+  <div class="portlet">
+    <div class="portlet-header">Feeds</div>
+    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+  </div>
+ 
+  <div class="portlet">
+    <div class="portlet-header">News</div>
+    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+  </div>
+ 
+</div>
+ 
+<div class="column">
+ 
+  <div class="portlet">
+    <div class="portlet-header">Shopping</div>
+    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+  </div>
+ 
+</div>
+ 
+<div class="column">
+ 
+  <div class="portlet">
+    <div class="portlet-header">Links</div>
+    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+  </div>
+ 
+  <div class="portlet">
+    <div class="portlet-header">Images</div>
+    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+  </div>
+ 
+</div>
+ 
+ 
+</body>
 </html>
